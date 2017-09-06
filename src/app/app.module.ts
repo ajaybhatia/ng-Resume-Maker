@@ -14,12 +14,14 @@ import { firebaseConfig } from '../configs/firebase.config';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { FormsModule } from '@angular/forms';
+import { NewResumeComponent } from './new-resume/new-resume.component';
 
 const routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'add-resume', component: NewResumeComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const routes = [
     NavigationComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewResumeComponent
   ],
   imports: [
     BrowserModule,
