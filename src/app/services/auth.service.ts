@@ -46,6 +46,6 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return this.afAuth.authState;
+    return firebase.auth().currentUser;
   }
 }
