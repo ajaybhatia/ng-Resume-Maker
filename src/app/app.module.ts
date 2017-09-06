@@ -7,6 +7,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AngularFireModule } from 'angularfire2';
+
+import { firebaseConfig } from '../configs/firebase.config';
 
 const routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +28,8 @@ const routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
