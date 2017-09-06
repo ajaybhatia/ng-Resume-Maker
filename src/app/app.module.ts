@@ -21,7 +21,8 @@ const routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'add-resume', component: NewResumeComponent, canActivate: [AuthGuard] }
+  { path: 'add-resume', component: NewResumeComponent, canActivate: [AuthGuard] },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
